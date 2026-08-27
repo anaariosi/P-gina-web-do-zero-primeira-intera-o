@@ -36,13 +36,21 @@
     <p class="artigo-autor">Por: Ana Ariosi</p>
     <p>Sejam bem vindos ao meu diário! Aqui vou contar um pouco sobre meu dia a dia</p>
 <button>❤️<span>0</span></button>
+<button> 💬 <span>0</span></button>
 </div>
 
      </main>
 </body>
 <script>
-    const botao = document.querySelector("button");
-    botao.addEventListener("click", BotaoClicado);
-    
+    const botoes = document.querySelectorAll("button");
+    botoes.forEach( function(botao){
+      botao.addEventListener("click", BotaoClicado);  
+       function BotaoClicado(){
+console.log("fui clicado");
+let texto = botao.querySelector("span");
+texto.textContent++;
+    }
+})
+
 </script>
 </html>
